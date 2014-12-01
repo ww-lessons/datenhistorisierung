@@ -39,7 +39,7 @@ class User(Base):
     username = Column(String(50), primary_key=True)
     description = Column(String(256))
     birthdate = Column(Date)
-    assigned_role_name = Column(String(50), ForeignKey('tbl_role.rolename'))
+    assigned_rolename = Column(String(50), ForeignKey('tbl_role.rolename'))
     assigned_role = relationship("Role")
 
 
