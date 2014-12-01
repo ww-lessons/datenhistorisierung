@@ -24,8 +24,8 @@ class Role(ModelUtility.Base):
     __tablename__ = 'tbl_role'
 
     rolename = Column(String(50), primary_key=True)
-    last_change_date = DateTime()
-    last_changed_by = String(50)
+    last_change_date = Column(DateTime())
+    last_changed_by = Column(String(50))
     permissions = relationship("Permission", backref=backref('role'), cascade="all, delete, delete-orphan")
 
 
