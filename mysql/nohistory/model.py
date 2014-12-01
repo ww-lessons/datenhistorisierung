@@ -16,7 +16,9 @@ class ModelUtility():
 class Permission(ModelUtility.Base):
     __tablename__ = 'tbl_role_permission'
 
-    rolename = Column(String(50), ForeignKey('tbl_role.rolename'), primary_key=True)
+    rolename = Column(String(50),
+                      ForeignKey('tbl_role.rolename'),
+                      primary_key=True)
     permission = Column(String(50), primary_key=True)
 
 
@@ -26,7 +28,9 @@ class Role(ModelUtility.Base):
     rolename = Column(String(50), primary_key=True)
     last_change_date = Column(DateTime())
     last_changed_by = Column(String(50))
-    permissions = relationship("Permission", backref=backref('role'), cascade="all, delete, delete-orphan")
+    permissions = relationship("Permission",
+                               backref=backref('role'),
+                               cascade="all, delete, delete-orphan")
 
 
 class User(ModelUtility.Base):
