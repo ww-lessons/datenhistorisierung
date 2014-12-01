@@ -1,0 +1,3 @@
+# TODO: Das ganze mit einigen Mio. Saetzen testen...
+
+__author__ = 'wiw39784'
