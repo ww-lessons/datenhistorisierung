@@ -55,7 +55,7 @@ class RolesInObjectHistoryTests(unittest.TestCase):
 
     def test_show_history(self):
         repo = RolesRepository(DATABASE)
-        rolle = repo.get_role_by_name(ROLENAME+"-1")
+        rolle = repo.get_role_by_name(ROLENAME)
         for version in rolle.previous_versions:
             print "{0} {1} {2} {3}".format(rolle.rolename, version.version_create_date, version.version_created_by,
                                            version.version_valid_until)
