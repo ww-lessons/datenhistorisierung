@@ -33,7 +33,8 @@ class RoleRepository():
 
     # Benutzer aktualisieren
     def update_role(self, role, permissions):
-        r = self.session.query(Role).filter(Role.rolename == role.rolename).first()
+        r = self.session.query(Role).filter(Role.rolename == role.rolename)\
+            .filter(Role.valid_until == ModelUtility.NullTimeStamp).first()
 
         # 1. Aktuellen Stand der Rolle als Version sichern
         r_version = Role(rolename=r.rolename, valid_until=datetime.now())
